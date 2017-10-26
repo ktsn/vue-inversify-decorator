@@ -2,8 +2,15 @@
   "name": "vue-inversify-decorator",
   "version": "0.0.0",
   "author": "katashin",
-  "description": "",
-  "keywords": [],
+  "description": "PoC of combining vue-class-component and Inversify together",
+  "keywords": [
+    "Vue",
+    "vue-class-component",
+    "Inversify",
+    "decorator",
+    "Inversion of Control",
+    "Dependency Injection"
+  ],
   "license": "MIT",
   "main": "dist/vue-inversify-decorator.cjs.js",
   "module": "lib/index.js",
