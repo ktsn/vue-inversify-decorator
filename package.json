@@ -1,0 +1,57 @@
+{
+  "name": "vue-inversify-decorator",
+  "version": "0.0.0",
+  "author": "katashin",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "dist/vue-inversify-decorator.cjs.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "homepage": "https://github.com/ktsn/vue-inversify-decorator",
+  "bugs": "https://github.com/ktsn/vue-inversify-decorator/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsn/vue-inversify-decorator.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run test && npm run clean && npm run build",
+    "clean": "rm -rf lib dist .tmp",
+    "dev": "run-p watch:test testem",
+    "build": "npm run build:ts && npm run build:rollup",
+    "build:ts": "tsc -p src",
+    "build:rollup": "node scripts/build.js",
+    "watch:test": "webpack --watch --config scripts/webpack.config.test.js",
+    "lint": "tslint \"src/**/*.ts\" && tslint \"test/**/*.ts\"",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "webpack --config scripts/webpack.config.test.js && testem ci --launch PhantomJS",
+    "testem": "testem"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/power-assert": "1.4.29",
+    "es6-map": "^0.1.5",
+    "glob": "^7.1.0",
+    "inversify": "^4.3.0",
+    "npm-run-all": "^4.0.2",
+    "power-assert": "^1.4.1",
+    "reflect-metadata": "^0.1.10",
+    "rollup": "^0.50.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "testem": "^1.12.0",
+    "ts-loader": "^3.0.5",
+    "tslint": "^5.0.0",
+    "tslint-config-ktsn": "^2.0.0",
+    "typescript": "^2.3.2",
+    "uglify-js": "^3.0.1",
+    "vue": "^2.5.2",
+    "vue-class-component": "^6.0.0",
+    "vue-template-compiler": "^2.5.2",
+    "webpack": "^3.0.0",
+    "webpack-espower-loader": "^1.0.2"
+  }
+}
